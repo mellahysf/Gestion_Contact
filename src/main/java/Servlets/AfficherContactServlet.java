@@ -38,10 +38,9 @@ public class AfficherContactServlet extends HttpServlet {
 		
 		req.setAttribute("contacts", contacts);
 		if(req.getParameter("id")!=null){
-			Map cont=new HashMap();
+			Map<String, Comparable> cont=new HashMap();
 			Contact contact=new Contact();
 			
-			int id =Integer.parseInt(req.getParameter("id"));
 			contact=CDAO.getContactById(Integer.parseInt(req.getParameter("id")));
 			cont.put("id", contact.getId());
 			cont.put("nom", contact.getNom());
@@ -64,16 +63,13 @@ public class AfficherContactServlet extends HttpServlet {
 @Override
 protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 	ContactDAO UDAO=new ContactDAO();
-	Contact contact=new Contact();
 	
 	if(req.getParameter("id")!=null){
 		int id = Integer.parseInt(req.getParameter("id"));
-		ContactDAO cdao = new ContactDAO();
-		cdao.updateContact(id, req.getParameter("nom"), req.getParameter("prenom"), req.getParameter("telephone"), req.getParameter("type"), req.getParameter("email"));
+		UDAO.updateContact(id, req.getParameter("nom"), req.getParameter("prenom"), req.getParameter("telephone"), req.getParameter("type"), req.getParameter("email"));
 	}
 	
 	
-	//UDAO.updateContact(contact);
 	resp.sendRedirect("AfficherContact");
 
 	}
