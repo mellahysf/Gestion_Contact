@@ -6,7 +6,6 @@ import java.util.List;
 import org.hibernate.HibernateException;
 import org.hibernate.Query;
 import org.hibernate.Session;
-import org.hibernate.Transaction;
 
 import Util.HibernateUtil;
 import Entity.Contact;
@@ -30,9 +29,9 @@ Session session;
 				return false;
 			}
 		}finally{
-			if(session!=null){
+			
 				session.close();
-			}
+			
 		}
 		return true;
 	}
@@ -61,9 +60,9 @@ Session session;
 			
 			return null;
 		}finally{
-			if(session!=null){
+			
 				session.close();
-			}
+			
 		}
 		
 		
@@ -82,9 +81,9 @@ Session session;
 				session.getTransaction().rollback();
 			}
 		}finally{
-			if(session!=null){
+			
 				session.close();
-			}
+			
 		}
 	
 		return contact;
@@ -113,9 +112,9 @@ Session session;
 			}
 			
 		}finally{
-			if(session!=null){
+			
 				session.close();
-			}
+			
 		}
 		return true;
 	}
@@ -133,14 +132,14 @@ Session session;
 			if(session.getTransaction()!=null)
 				return false;
 		}finally{
-			if(session!=null){
+			
 				try{
 					session.close();
 				}catch(Exception ex ){
 					ex.printStackTrace();
 				}
 			}
-		}
+		
 		return true;
 	}
 	
