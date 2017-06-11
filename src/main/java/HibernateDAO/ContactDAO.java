@@ -6,7 +6,6 @@ import java.util.List;
 import org.hibernate.HibernateException;
 import org.hibernate.Query;
 import org.hibernate.Session;
-//import org.hibernate.query.Query;
 import org.hibernate.Transaction;
 
 import Util.HibernateUtil;
@@ -18,7 +17,6 @@ Session session;
 		Session session=HibernateUtil.getSessionFactory().openSession();
 		return session;
 	}
-	//enregistrer des donnees dans la table categories
 	public boolean saveData(Contact contact){
 		session=setSession();
 		try{
@@ -30,7 +28,6 @@ Session session;
 			he.printStackTrace();
 			if(session.getTransaction()!=null){
 				return false;
-				//session.getTransaction().rollback();
 			}
 		}finally{
 			if(session!=null){
@@ -39,7 +36,7 @@ Session session;
 		}
 		return true;
 	}
-	//selectionner la liste des donnees
+
 	@SuppressWarnings("unchecked")
 	public List<Contact> selectAllData(){
 		List<Contact> contact=new ArrayList<Contact>();
@@ -73,7 +70,7 @@ Session session;
 	}
 	public Contact getContactById(Integer id){
 		Contact contact=null;
-		Session session=setSession();
+		session=setSession();
 		try{
 			session.beginTransaction();
 			contact=(Contact)session.get(Contact.class, id);
@@ -94,7 +91,7 @@ Session session;
 	}
 	public boolean updateContact(int id , String nom, String prenom , String telephone , String type,String email){
 		Contact cat = new Contact() ; 
-		Session session = setSession();
+		session = setSession();
 		
 		try{
 			session.beginTransaction();
@@ -113,7 +110,6 @@ Session session;
 			hb.printStackTrace();
 			if(session.getTransaction()!=null){
 				return false;
-				//session.getTransaction().rollback();
 			}
 			
 		}finally{
@@ -126,7 +122,7 @@ Session session;
 	public boolean deleteContact(int idA){
 		Contact c = null;
 		
-		Session session = setSession();		
+		session = setSession();		
 		try{
 			session.beginTransaction();
 			c = session.get(Contact.class, idA);
@@ -136,7 +132,6 @@ Session session;
 			System.out.println("ERROR!!");
 			if(session.getTransaction()!=null)
 				return false;
-				//session.getTransaction().rollback();
 		}finally{
 			if(session!=null){
 				try{
