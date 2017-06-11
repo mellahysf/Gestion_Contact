@@ -63,8 +63,7 @@ public class AfficherContactServlet extends HttpServlet {
 	}
 @Override
 protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-	ContactDAO UDAO=new ContactDAO();
-	Contact contact=new Contact();
+	
 	
 	if(req.getParameter("id")!=null){
 		int id = Integer.parseInt(req.getParameter("id"));
