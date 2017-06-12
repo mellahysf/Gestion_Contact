@@ -29,7 +29,7 @@ public class OneTest {
 	
 	@Test
 	public void deleteContactTest(){
-		assertEquals("the result must be true", true, contactDAO.deleteContact(2));
+		assertEquals("the result must be true", true, contactDAO.deleteContact(1));
 	}
 	
 	@Test
