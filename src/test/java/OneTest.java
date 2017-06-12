@@ -22,10 +22,10 @@ public class OneTest {
 		contactDAO = null;
 	}
 	
-	@Test
+	/*@Test
 	public void updateContactTest(){
-		assertEquals("the result must be true", true, contactDAO.updateContact(1, "KARABILA", "Mohamed", "0643207443", "tester", "tester@gmail.com"));
-	}
+		assertEquals("the result must be true", true, contactDAO.updateContact(2, "KARABILA", "Mohamed", "0643207443", "tester", "tester@gmail.com"));
+	}*/
 	
 	/*@Test
 	public void deleteContactTest(){
