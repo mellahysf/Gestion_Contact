@@ -27,11 +27,11 @@ public class OneTest {
 		assertEquals("the result must be true", true, contactDAO.updateContact(1, "x", "Mohamed", "0643207443", "tester", "tester@gmail.com"));
 	}
 	
-	@Test
+	/*@Test
 	public void deleteContactTest(){
 		assertEquals("the result must be true", true, contactDAO.deleteContact(1));
 	}
-	
+	*/
 	@Test
 	public void getContactByIdTest(){
 		assertEquals("the result must be ", 1, contactDAO.getContactById(1).getId());
