@@ -22,15 +22,15 @@ public class OneTest {
 		contactDAO = null;
 	}
 	
-	/*@Test
+	@Test
 	public void updateContactTest(){
 		assertEquals("the result must be true", true, contactDAO.updateContact(2, "KARABILA", "Mohamed", "0643207443", "tester", "tester@gmail.com"));
-	}*/
+	}
 	
-	/*@Test
+	@Test
 	public void deleteContactTest(){
 		assertEquals("the result must be true", true, contactDAO.deleteContact(2));
-	}*/
+	}
 	
 	@Test
 	public void getContactByIdTest(){
